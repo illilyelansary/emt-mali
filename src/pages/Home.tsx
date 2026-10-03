@@ -179,7 +179,7 @@ export default function Home() {
                 BTP, Forages hydrauliques & <span className="text-blue-600">Aménagements</span> au Mali.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Basée à <strong className="text-slate-900">Tombouctou</strong> avec une représentation à <strong className="text-slate-900">Bamako</strong>, EMT SARL déploie son expertise technique au service des communautés, des institutions et des bailleurs dans les régions du Nord et du Centre du Mali.
+                Basée à <strong className="text-slate-900">Tombouctou</strong> avec une représentation à <strong className="text-slate-900">Bamako</strong>, EMT SARL déploie son expertise technique au service des communautés, des institutions et des partenaires humanitaires et de développement dans <strong className="text-slate-900">toutes les régions du Mali</strong>.
               </p>
 
               <div className="mt-6 flex max-w-2xl flex-wrap gap-2">
@@ -202,7 +202,7 @@ export default function Home() {
               <div className="mt-12 grid max-w-xl grid-cols-2 gap-4 border-t border-slate-200 pt-7 sm:grid-cols-4">
                 {[
                   [COMPANY_INFO.referenceCount, "références"],
-                  [COMPANY_INFO.regionCount, "régions"],
+                  ["Toutes", "les régions"],
                   [`${COMPANY_INFO.partnerCount}+`, "partenaires"],
                   [COMPANY_INFO.domainCount, "domaines"],
                 ].map(([value, label]) => (
@@ -226,7 +226,7 @@ export default function Home() {
                 <div className="space-y-4 py-6 text-sm leading-7 text-slate-600">
                   <p className="flex items-start gap-2.5">
                     <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
-                    <span><strong>10 années d'ancrage local</strong> à Tombouctou et dans les zones sahéliennes.</span>
+                    <span><strong>Ancrage solide et déploiement national</strong> à Tombouctou, Bamako et dans toutes les régions du pays.</span>
                   </p>
                   <p className="flex items-start gap-2.5">
                     <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
@@ -266,22 +266,22 @@ export default function Home() {
               {SERVICES.map((service) => {
                 const tone = toneMap[service.accent] || toneMap.blue;
                 return (
-                  <article key={service.id} className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
+                  <article key={service.id} className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs transition duration-300 hover:-translate-y-1.5 hover:border-blue-400 hover:shadow-xl">
                     <div>
-                      <div className="relative h-44 overflow-hidden bg-slate-100">
+                      <div className="relative h-48 overflow-hidden bg-slate-100">
                         <img src={service.imageUrl} alt={service.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                        <div className={`absolute left-3 top-3 grid h-10 w-10 place-items-center rounded-xl bg-white shadow-md ${tone.icon}`}>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                        <div className={`absolute left-3.5 top-3.5 grid h-10 w-10 place-items-center rounded-xl bg-white/95 backdrop-blur-xs shadow-md ${tone.icon}`}>
                           {getIcon(service.iconName, "h-5 w-5")}
                         </div>
                       </div>
-                      <div className="p-5">
+                      <div className="p-6">
                         <p className={`text-[11px] font-extrabold uppercase tracking-wider ${tone.text}`}>{service.kicker}</p>
                         <h3 className="mt-2 text-lg font-extrabold leading-snug text-slate-900">{service.title}</h3>
-                        <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
                       </div>
                     </div>
-                    <div className="border-t border-slate-100 p-5 pt-4">
+                    <div className="border-t border-slate-100 px-6 py-4 bg-slate-50/50">
                       <a href="#realisations" className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 transition hover:text-blue-800">
                         Voir les réalisations <ArrowUpRight className="h-4 w-4" />
                       </a>
@@ -311,23 +311,23 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+            <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xl shadow-slate-200/40">
               <div className="grid lg:grid-cols-[1.18fr_.82fr]">
-                <div className="relative min-h-[380px] overflow-hidden bg-slate-900 sm:min-h-[460px]">
+                <div className="relative min-h-[420px] overflow-hidden bg-slate-950 sm:min-h-[500px]">
                   <img key={currentSlide.id} src={currentSlide.imageUrl} alt={currentSlide.title} className="absolute inset-0 h-full w-full object-cover transition duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                    <span className="inline-flex rounded-full bg-white/90 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-slate-900 shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
+                    <span className="inline-flex rounded-full bg-white/95 backdrop-blur-xs px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-slate-900 shadow-md">
                       {currentSlide.label}
                     </span>
                     <p className="mt-2.5 text-xs font-bold uppercase tracking-wider text-blue-200">{currentSlide.domain}</p>
                     <h3 className="mt-1.5 max-w-xl text-2xl font-black text-white sm:text-3xl">{currentSlide.title}</h3>
                   </div>
                   <div className="absolute right-5 top-5 flex gap-2">
-                    <button type="button" onClick={() => goToSlide(-1)} aria-label="Précédent" className="grid h-10 w-10 place-items-center rounded-full bg-white/90 text-slate-900 shadow-md backdrop-blur transition hover:bg-white hover:text-blue-600">
+                    <button type="button" onClick={() => goToSlide(-1)} aria-label="Précédent" className="grid h-11 w-11 place-items-center rounded-full bg-white/95 text-slate-900 shadow-lg backdrop-blur transition hover:bg-white hover:text-blue-600">
                       <ChevronLeft className="h-5 w-5" />
                     </button>
-                    <button type="button" onClick={() => goToSlide(1)} aria-label="Suivant" className="grid h-10 w-10 place-items-center rounded-full bg-white/90 text-slate-900 shadow-md backdrop-blur transition hover:bg-white hover:text-blue-600">
+                    <button type="button" onClick={() => goToSlide(1)} aria-label="Suivant" className="grid h-11 w-11 place-items-center rounded-full bg-white/95 text-slate-900 shadow-lg backdrop-blur transition hover:bg-white hover:text-blue-600">
                       <ChevronRight className="h-5 w-5" />
                     </button>
                   </div>
@@ -397,18 +397,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section Expérience générale : un paragraphe sobre sans détails ni listes */}
+        {/* Section Expérience générale : un paragraphe sobre et impactant */}
         <section id="references" className="bg-white py-24 border-b border-slate-200">
           <div className="container">
-            <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50/40 p-8 sm:p-12 shadow-sm">
+            <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-gradient-to-br from-white via-slate-50 to-blue-50/40 p-8 sm:p-14 shadow-lg shadow-slate-200/50">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-blue-700">
                 <Award className="h-4 w-4 text-blue-600" /> Expérience & Références
               </div>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
                 Une expérience solide et éprouvée sur le terrain.
               </h2>
-              <p className="mt-6 text-base leading-8 text-slate-700 sm:text-lg">
-                Depuis sa création en 2015, l’Entreprise Malienne des Travaux (EMT SARL) s’est forgée une solide expérience dans la conduite et la livraison de chantiers d’envergure à travers le territoire malien. Qu’il s’agisse de forages hydrauliques, de systèmes d’adduction d’eau potable à énergie solaire, de constructions et réhabilitations de bâtiments scolaires ou de centres de santé, de travaux d’aménagements hydro-agricoles ou encore d’infrastructures pastorales, l’entreprise mobilise l’ensemble de ses compétences techniques, de ses équipements adaptés et de ses équipes de proximité pour garantir des réalisations pérennes, conformes aux exigences des communautés locales et des bailleurs de fonds.
+              <p className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg">
+                Depuis sa création en 2015, l’Entreprise Malienne des Travaux (EMT SARL) s’est forgée une solide expérience dans la conduite et la livraison de chantiers d’envergure à travers l'ensemble du territoire malien. Qu’il s’agisse de forages hydrauliques, de systèmes d’adduction d’eau potable à énergie solaire, de constructions et réhabilitations de bâtiments scolaires ou de centres de santé, de travaux d’aménagements hydro-agricoles ou encore d’infrastructures pastorales, l’entreprise mobilise l’ensemble de ses compétences techniques, de ses équipements adaptés et de ses équipes de proximité pour garantir des réalisations pérennes, conformes aux exigences des communautés locales et des bailleurs de fonds.
               </p>
             </div>
           </div>
@@ -418,30 +418,26 @@ export default function Home() {
         <section id="zones" className="bg-slate-50/60 py-24 border-b border-slate-200">
           <div className="container">
             <div className="max-w-2xl">
-              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-blue-600">Un maillage territorial maîtrisé</p>
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-blue-600">Un maillage territorial national</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-                10 zones d’intervention au Mali.
+                Une présence active dans toutes les régions du Mali.
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                EMT dispose d’un ancrage historique à Tombouctou et déploie ses équipes dans plusieurs régions du Mali, selon les besoins des projets et de ses partenaires.
+                Grâce à son siège historique à Tombouctou, sa représentation stratégique à Bamako et la flexibilité de ses équipes mobiles, EMT SARL intervient efficacement sur l'ensemble du territoire national malien.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {REGIONS.map((region) => {
                 const tone = toneMap[region.tone] || toneMap.blue;
                 return (
-                  <article key={region.name} className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs transition hover:border-blue-300 hover:shadow-md">
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <div className={`grid h-11 w-11 place-items-center rounded-xl ${tone.bg} ${tone.icon}`}>
-                          <Globe2 className="h-5 w-5" />
-                        </div>
-                        <span className={`rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-wider ${tone.badge}`}>
-                          Région
-                        </span>
-                      </div>
-                      <h3 className="mt-5 text-xl font-extrabold text-slate-900">{region.name}</h3>
+                  <article key={region.name} className="flex items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-xs transition duration-200 hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-sm">
+                    <div className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${tone.bg} ${tone.icon}`}>
+                      <Globe2 className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Zone</span>
+                      <h3 className="text-base font-extrabold text-slate-900 truncate">{region.name}</h3>
                     </div>
                   </article>
                 );
@@ -499,9 +495,16 @@ export default function Home() {
         {/* À propos & Documentations */}
         <section id="a-propos" className="bg-slate-50/80 py-24 border-b border-slate-200">
           <div className="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
-              <img src="/images/realisation-forage-mft-termine.jpeg" alt="Réalisation de forage EMT" className="mx-auto h-[360px] w-full object-cover object-center sm:h-[460px]" />
-              <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-6 py-4 text-xs">
+            <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xl shadow-slate-200/40">
+              <div className="relative h-[380px] sm:h-[480px] overflow-hidden bg-slate-900">
+                <img src="/images/realisation-forage-mft-termine.jpeg" alt="Réalisation de forage EMT" className="h-full w-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-5 right-5 text-white">
+                  <span className="inline-flex rounded-full bg-blue-600/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Sur le terrain</span>
+                  <p className="mt-1 text-sm font-bold">Chantier d'adduction d'eau et forage technique au Mali</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-4 text-xs">
                 <span className="font-bold text-slate-700">Documents officiels vérifiés</span>
                 <a href="/images/rc-emt-2.pdf" className="inline-flex items-center gap-1 font-bold text-blue-700 hover:text-blue-800">
                   Consulter le RCCM <ArrowUpRight className="h-3.5 w-3.5" />
