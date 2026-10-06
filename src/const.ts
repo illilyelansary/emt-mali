@@ -29,6 +29,7 @@ export const COMPANY_INFO = {
     address: "Sanfil, près de l'École de Santé Bouctou / Route de Kabara",
     phones: ["+223 79 19 94 66", "+223 69 19 94 66"],
     email: "entreprise@emt-mali.com",
+    recruitmentEmail: "emploi@emt-mali.com",
   },
   representation: {
     city: "Bamako",
@@ -206,6 +207,22 @@ export const FINANCIAL_PARTNERS = [
   "Living Earth Foundation",
   "AEN",
 ];
+
+export const PARTNER_LOGOS = {
+  organisations: [
+    { name: "UNICEF", src: "/images/partners/unicef.png" },
+    { name: "FAO Mali", src: "/images/partners/fao.png" },
+    { name: "CICR", src: "/images/partners/cicr.png" },
+    { name: "HCR", src: "/images/partners/hcr.png" },
+  ],
+  bailleurs: [
+    { name: "Banque mondiale", src: "/images/partners/world-bank.png" },
+    { name: "GIZ", src: "/images/partners/giz.png" },
+    { name: "AFD", src: "/images/partners/afd.png" },
+    { name: "Union européenne", src: "/images/partners/union-europeenne.png" },
+    { name: "LuxDev", src: "/images/partners/luxdev.png" },
+  ],
+};
 
 
 export interface RealizationSlide {

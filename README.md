@@ -1,6 +1,6 @@
 # EMT SARL — Site vitrine institutionnel
 
-Site officiel de l’**Entreprise Malienne de Travaux (EMT SARL)**, basé à Tombouctou et prêt à être déployé sur GitHub Pages, Netlify ou toute autre plateforme statique.
+Site officiel de l’**Entreprise Malienne de Travaux (EMT SARL)**, intervenant dans toutes les régions du Mali et prêt à être déployé sur GitHub Pages, Netlify ou toute autre plateforme statique.
 
 ## Données intégrées depuis le document officiel
 
@@ -15,14 +15,15 @@ La rubrique **Expérience** présente désormais un paragraphe institutionnel g�
 - **Dénomination :** Entreprise Malienne de Travaux
 - **Sigle :** EMT SARL
 - **Année de création :** 2015
-- **NIF :** 061001033N
-- **RCCM :** MA.TBT.2015.B.128
 - **Activités déclarées :** BTP, forages hydrauliques, transport, quincaillerie, aménagement et commerce général
 - **Siège :** Sanfil, près de l'École de Santé Bouctou / Route de Kabara, Tombouctou
 - **Représentation :** Torokorobougou, Rue 312 Porte 44, Bamako
 - **Téléphones :** +223 79 19 94 66 / +223 69 19 94 66
 - **Email :** entreprise@emt-mali.com
+- **Candidatures :** emploi@emt-mali.com
 - **Devise :** Expertise. Engagement. Résultats.
+
+Les encadrés partenaires et bailleurs intègrent des logos institutionnels stockés localement dans `public/images/partners/` afin de rester compatibles avec Netlify.
 
 ## Développement local
 

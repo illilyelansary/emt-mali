@@ -25,7 +25,7 @@ import {
   Waves,
   X,
 } from "lucide-react";
-import { COMPANY_INFO, FINANCIAL_PARTNERS, PARTNER_GROUPS, REALIZATION_SLIDES, REGIONS, SERVICES } from "../const";
+import { COMPANY_INFO, FINANCIAL_PARTNERS, PARTNER_GROUPS, PARTNER_LOGOS, REALIZATION_SLIDES, REGIONS, SERVICES } from "../const";
 
 const iconMap = {
   Droplets,
@@ -98,7 +98,7 @@ export default function Home() {
         <div className="container flex min-h-10 flex-wrap items-center justify-between gap-3 py-2">
           <span className="inline-flex items-center gap-2 font-medium">
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            Entreprise Malienne de Travaux — NIF: {COMPANY_INFO.nif} | RCCM: {COMPANY_INFO.rccm}
+            Entreprise Malienne de Travaux — Infrastructures, eau et aménagements au Mali
           </span>
           <div className="flex items-center gap-5">
             <a href={`tel:${COMPANY_INFO.headquarters.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 font-semibold text-slate-700 transition hover:text-blue-700">
@@ -115,7 +115,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md shadow-xs">
         <div className="container flex h-[78px] items-center justify-between gap-6">
           <a href="#accueil" className="flex items-center gap-3.5" onClick={() => setMobileMenuOpen(false)}>
-            <div className="grid h-12 w-16 place-items-center overflow-hidden rounded-lg bg-white p-0.5 border border-slate-200 shadow-xs">
+            <div className="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-xl bg-white p-1.5 border border-slate-200 shadow-xs">
               <img src="/images/logo-emt.png" alt="Logo EMT SARL" className="h-full w-full object-contain" />
             </div>
             <div>
@@ -164,10 +164,10 @@ export default function Home() {
       </header>
 
       <main>
-        {/* Hero lumineux avec superposition photographique aérée */}
+        {/* Hero lumineux avec le logo EMT en filigrane */}
         <section id="accueil" className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-blue-50/70 via-white to-slate-50">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.14] mix-blend-multiply">
-            <img src="/images/hydraulique-forage-02.jpeg" alt="Chantier de forage" className="h-full w-full object-cover object-center" />
+          <div className="pointer-events-none absolute right-[-5%] top-1/2 hidden -translate-y-1/2 opacity-[0.08] lg:block">
+            <img src="/images/logo-emt.png" alt="" aria-hidden="true" className="h-[620px] w-[620px] object-contain" />
           </div>
 
           <div className="container relative grid min-h-[640px] items-center py-20 lg:grid-cols-[1.1fr_.9fr] lg:gap-14">
@@ -179,7 +179,7 @@ export default function Home() {
                 BTP, Forages hydrauliques & <span className="text-blue-600">Aménagements</span> au Mali.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Basée à <strong className="text-slate-900">Tombouctou</strong> avec une représentation à <strong className="text-slate-900">Bamako</strong>, EMT SARL déploie son expertise technique au service des communautés, des institutions et des partenaires humanitaires et de développement dans <strong className="text-slate-900">toutes les régions du Mali</strong>.
+                EMT SARL met son expertise technique au service des communautés, des institutions, des collectivités et des partenaires humanitaires et de développement dans <strong className="text-slate-900">toutes les régions du Mali</strong>, pour des infrastructures utiles, durables et adaptées aux réalités locales.
               </p>
 
               <div className="mt-6 flex max-w-2xl flex-wrap gap-2">
@@ -461,33 +461,52 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {PARTNER_GROUPS.map((group) => (
-                <article key={group.title} className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-2xs">
-                  <h3 className="text-sm font-extrabold text-slate-900">{group.title}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {group.partners.map((partner) => (
-                      <span key={partner} className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs">
-                        {partner}
-                      </span>
-                    ))}
+            <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
+              <article className="rounded-3xl border border-slate-200 bg-slate-50/70 p-6 shadow-sm sm:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-widest text-blue-600">Partenaires de mise en œuvre</p>
+                    <h3 className="mt-2 text-2xl font-black text-slate-900">Un réseau institutionnel engagé</h3>
                   </div>
-                </article>
-              ))}
-            </div>
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-white text-blue-700 shadow-sm"><ShieldCheck className="h-5 w-5" /></div>
+                </div>
+                <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {PARTNER_LOGOS.organisations.map((logo) => (
+                    <div key={logo.name} className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-2xs">
+                      <img src={logo.src} alt={`Logo ${logo.name}`} className="h-10 w-16 object-contain" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-wide text-slate-600">{logo.name}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {PARTNER_GROUPS.flatMap((group) => group.partners).slice(0, 12).map((partner) => (
+                    <span key={partner} className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 shadow-2xs">{partner}</span>
+                  ))}
+                </div>
+              </article>
 
-            <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/60 p-6">
-              <div className="flex items-center gap-2 text-sm font-extrabold text-blue-900">
-                <ShieldCheck className="h-5 w-5 text-blue-700" />
-                Partenaires financiers & bailleurs des projets exécutés
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {FINANCIAL_PARTNERS.map((partner) => (
-                  <span key={partner} className="rounded-lg border border-blue-200 bg-white px-3 py-1.5 text-xs font-bold text-blue-900 shadow-2xs">
-                    {partner}
-                  </span>
-                ))}
-              </div>
+              <article className="rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm sm:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-widest text-blue-600">Bailleurs & partenaires financiers</p>
+                    <h3 className="mt-2 text-2xl font-black text-slate-900">Des projets soutenus durablement</h3>
+                  </div>
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-white text-blue-700 shadow-sm"><Building2 className="h-5 w-5" /></div>
+                </div>
+                <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-5">
+                  {PARTNER_LOGOS.bailleurs.map((logo) => (
+                    <div key={logo.name} className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-blue-100 bg-white p-3 text-center shadow-2xs">
+                      <img src={logo.src} alt={`Logo ${logo.name}`} className="h-10 w-16 object-contain" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-wide text-slate-600">{logo.name}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {FINANCIAL_PARTNERS.slice(0, 9).map((partner) => (
+                    <span key={partner} className="rounded-lg border border-blue-100 bg-white px-3 py-1.5 text-xs font-semibold text-blue-900 shadow-2xs">{partner}</span>
+                  ))}
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -507,7 +526,7 @@ export default function Home() {
               <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-4 text-xs">
                 <span className="font-bold text-slate-700">Documents officiels vérifiés</span>
                 <a href="/images/rc-emt-2.pdf" className="inline-flex items-center gap-1 font-bold text-blue-700 hover:text-blue-800">
-                  Consulter le RCCM <ArrowUpRight className="h-3.5 w-3.5" />
+                  Consulter la fiche institutionnelle <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>
@@ -518,7 +537,7 @@ export default function Home() {
                 Un ancrage historique au cœur du territoire malien.
               </h2>
               <p className="mt-6 text-base leading-8 text-slate-600">
-                Enregistrée au RCCM de Tombouctou sous le numéro <strong className="text-slate-900">{COMPANY_INFO.rccm}</strong> et identifiée par le NIF <strong className="text-slate-900">{COMPANY_INFO.nif}</strong>, l’Entreprise Malienne de Travaux répond depuis 2015 aux appels d’offres et aux consultations pour des projets d’infrastructures de premier plan.
+                Depuis 2015, l’Entreprise Malienne de Travaux répond aux appels d’offres et aux consultations pour des projets d’infrastructures de premier plan, avec des équipes techniques et des moyens adaptés aux contextes de toutes les régions du Mali.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -559,6 +578,10 @@ export default function Home() {
                 <a href={`mailto:${COMPANY_INFO.headquarters.email}`} className="flex items-center gap-3 font-semibold text-slate-800 hover:text-blue-700">
                   <Send className="h-5 w-5 text-blue-600 shrink-0" />
                   {COMPANY_INFO.headquarters.email}
+                </a>
+                <a href={`mailto:${COMPANY_INFO.headquarters.recruitmentEmail}`} className="flex items-center gap-3 rounded-xl border border-blue-100 bg-blue-50/70 px-3 py-2.5 font-semibold text-blue-900 hover:border-blue-300 hover:bg-blue-50">
+                  <Send className="h-5 w-5 text-blue-600 shrink-0" />
+                  <span><span className="block text-[10px] font-extrabold uppercase tracking-wider text-blue-600">Postuler</span>{COMPANY_INFO.headquarters.recruitmentEmail}</span>
                 </a>
                 <div className="flex items-start gap-3 text-slate-600 pt-2 border-t border-slate-200">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
@@ -631,7 +654,7 @@ export default function Home() {
         <div className="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-14 place-items-center overflow-hidden rounded-md bg-white border border-slate-200 shadow-2xs">
+              <div className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-white p-1 border border-slate-200 shadow-2xs">
                 <img src="/images/logo-emt.png" alt="Logo EMT SARL" className="h-full w-full object-contain" />
               </div>
               <div className="text-lg font-black text-slate-900">
@@ -660,11 +683,6 @@ export default function Home() {
               {COMPANY_INFO.headquarters.address}
               <br />
               Tombouctou — Mali
-              <br />
-              <br />
-              <strong>NIF :</strong> {COMPANY_INFO.nif}
-              <br />
-              <strong>RCCM :</strong> {COMPANY_INFO.rccm}
             </p>
           </div>
 
