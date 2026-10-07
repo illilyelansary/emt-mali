@@ -83,7 +83,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Assainissement & hygiène (WASH)",
     kicker: "Prévenir, protéger, assainir",
     description: "Latrines, dispositifs de lavage des mains, plateformes de gestion des déchets et caniveaux.",
-    imageUrl: "/images/realisation-forage-mft.jpeg",
+    imageUrl: "/images/realisation-incinerateur.jpeg",
     iconName: "Waves",
     count: 8,
     accent: "blue",
