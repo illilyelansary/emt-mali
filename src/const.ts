@@ -93,7 +93,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Infrastructures pastorales & élevage",
     kicker: "Accompagner les économies pastorales",
     description: "Parcs de vaccination, puits pastoraux, aires d'abattage, marchés à bétail et magasins d'aliments.",
-    imageUrl: "/images/realisation-unite-lait.jpeg",
+    imageUrl: "/images/realisation-unite-elevage.jpeg",
     iconName: "PawPrint",
     count: 12,
     accent: "orange",
