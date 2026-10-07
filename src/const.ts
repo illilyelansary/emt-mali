@@ -10,9 +10,9 @@ export interface ServiceItem {
 }
 
 export const COMPANY_INFO = {
-  name: "ENTREPRISE MALIENNE DE TRAVAUX",
+  name: "ENTREPRISE MALIENNE DES TRAVAUX",
   acronym: "EMT SARL",
-  slogan: "Des infrastructures utiles, durables et proches des territoires.",
+  slogan: "Des infrastructures utiles, durables et proches des populations.",
   officialSlogan: "Expertise. Engagement. Résultats.",
   creationYear: 2015,
   referenceCount: 127,
